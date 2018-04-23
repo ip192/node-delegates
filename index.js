@@ -12,7 +12,7 @@ module.exports = Delegator;
  * @param {String} target
  * @api public
  */
-
+// 如果用户以 Delegator() 这种方式调用此模块，this 则代表全局上下文，借助 if 更正为正确用法
 function Delegator(proto, target) {
   if (!(this instanceof Delegator)) return new Delegator(proto, target);
   this.proto = proto;
